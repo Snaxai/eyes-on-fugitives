@@ -2,12 +2,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Test from '../components/Test';
-
 const { douchebagId } = Astro.params;
+
+console.log(douchebagId)
+
 
 const response1 = await fetch(`https://api.fbi.gov/@wanted-person/${douchebagId}`)
 const data2 = await response1.json();
 console.log('data2 ', data2)
+
+export function getStaticPaths() {
+  return [
+    {params: {id: "69173186c4544702ad9d210c40be07e5"}},
+  ];
+}
 ---
 
 <Layout title="Welcome to Astro.">
@@ -46,6 +54,7 @@ console.log('data2 ', data2)
       <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
     </p>
     THIS IS A DOUCHEBAG
+    {JSON.stringify(data2)}
     <Test client:load/>
   </main>
 </Layout>
