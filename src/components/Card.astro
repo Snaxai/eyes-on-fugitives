@@ -9,7 +9,7 @@ interface Props {
 const {href, douchebag} = Astro.props;
 ---
 
-<li class="link-card">
+<li class="link-card" transition:animate="slide">
   <a href={href}>
     <div style={{display: 'flex', flexDirection: 'row'}}>
       <div>
