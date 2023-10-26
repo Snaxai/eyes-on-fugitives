@@ -1,4 +1,5 @@
 ---
+import Image from "../components/Image.tsx"
 import dayjs from 'dayjs'
 interface Props {
   title: string;
@@ -12,8 +13,11 @@ const {href, douchebag} = Astro.props;
 <li class="link-card" transition:animate="slide">
   <a href={href}>
     <div style={{display: 'flex', flexDirection: 'row'}}>
-      <div>
-      <img src={douchebag.images?.[0]?.thumb} alt="Hello World og mugshots"/>
+      <div>	
+			{douchebag.images &&
+				<Image client:only="react" images={douchebag.images}  />
+			}
+	
 </div>
       <div style={{marginLeft: '16px'}}>
       <h2>

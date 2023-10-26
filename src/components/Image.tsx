@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
-const ImageSlider = ({ images }) => {
+interface Props {
+  images: any[];
+}
+const Image = ({ images }: Props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Function to increment the index and loop back to the start
@@ -10,7 +13,7 @@ const ImageSlider = ({ images }) => {
 
   useEffect(() => {
     // Automatically transition to the next image every 3 seconds (3000 milliseconds)
-    const interval = setInterval(nextImage, 2000);
+    const interval = setInterval(nextImage, 3000);
 
     // Clean up the interval when the component unmounts
     return () => {
@@ -19,14 +22,12 @@ const ImageSlider = ({ images }) => {
   }, [currentIndex]);
 
   return (
-    <div style={{ height: "500px", width: "400px" }}>
-      <img
-        style={{ maxHeight: "500px", maxWidth: "400px" }}
-        src={images[currentIndex].original}
-        alt={`Image ${currentIndex + 1}`}
-      />
-    </div>
+    <img
+      style={{ height: "100px" }}
+      src={images?.[currentIndex]?.thumb}
+      alt='Hello World og mugshots'
+    />
   );
 };
 
-export default ImageSlider;
+export default Image;
