@@ -10,7 +10,7 @@ const ImageSlider = ({ images }) => {
 
   useEffect(() => {
     // Automatically transition to the next image every 3 seconds (3000 milliseconds)
-    const interval = setInterval(nextImage, 3000);
+    const interval = setInterval(nextImage, 2000);
 
     // Clean up the interval when the component unmounts
     return () => {
@@ -20,7 +20,7 @@ const ImageSlider = ({ images }) => {
 
   return (
     <div style={{height: '500px', width: '400px'}}>
-      <img style={{height:'500px'}} src={images[currentIndex].original} alt={`Image ${currentIndex + 1}`} />
+      <img style={{maxHeight:'500px', maxWidth: '400px'}} src={images[currentIndex].original} alt={`Image ${currentIndex + 1}`} />
     </div>
   );
 };
