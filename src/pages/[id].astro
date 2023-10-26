@@ -6,16 +6,10 @@ const { douchebagId } = Astro.params;
 
 console.log(douchebagId)
 
+export const prerender = false;
 
-const response1 = await fetch(`https://api.fbi.gov/@wanted-person/${douchebagId}`)
-const data2 = await response1.json();
-console.log('data2 ', data2)
+const { id } = Astro.params;
 
-export function getStaticPaths() {
-  return [
-    {params: {id: "69173186c4544702ad9d210c40be07e5"}},
-  ];
-}
 ---
 
 <Layout title="Welcome to Astro.">
@@ -48,7 +42,7 @@ export function getStaticPaths() {
         </linearGradient>
       </defs>
     </svg>
-    <h1>Eyes on <span class="text-gradient">Fugitives</span></h1>
+    <h1>Eyes on <span class="text-gradient">Fugitives {id}</span></h1>
     <p class="instructions">
       To get started, open the directory <code>src/pages</code> in your project.<br/>
       <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.

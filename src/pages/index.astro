@@ -48,13 +48,11 @@ console.log('data2 ', data2)
     </p>
     <ul role="list" class="link-card-grid">
       {data2?.items.map((douchebag) => (
-
             <Card
                 href={`/${douchebag.uid}`}
                 title={douchebag.title}
                 body={`${douchebag.description} - ID: ${douchebag.uid}`}
             />
-
       ))}
     </ul>
     <Test client:load/>
