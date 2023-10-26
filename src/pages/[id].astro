@@ -1,11 +1,11 @@
 
 ---
-import { Link } from 'astro-link';
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
 import Test from '../components/Test';
 
-const response1 = await fetch("https://api.fbi.gov/@wanted?pageSize=20&page=1&sort_on=modified&sort_order=desc")
+const { douchebagId } = Astro.params;
+
+const response1 = await fetch(`https://api.fbi.gov/@wanted-person/${douchebagId}`)
 const data2 = await response1.json();
 console.log('data2 ', data2)
 ---
