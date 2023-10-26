@@ -2,12 +2,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-import Test from '../components/Test';
 
 const response1 = await fetch("https://api.fbi.gov/@wanted?pageSize=20&page=1&sort_on=modified&sort_order=desc")
 const data2 = await response1.json();
-console.log('data2 ', data2)
-
 
 ---
 
@@ -43,19 +40,16 @@ console.log('data2 ', data2)
     </svg>
     <h1>Eyes on <span class="text-gradient">Fugitives</span></h1>
     <p class="instructions">
-      To get started, open the directory <code>src/pages</code> in your project.<br/>
-      <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
+      <strong>This is a list of super</strong> Douchebags in America.
     </p>
     <ul role="list" class="link-card-grid">
       {data2?.items.map((douchebag) => (
             <Card
                 href={`/${douchebag.uid}`}
-                title={douchebag.title}
-                body={`${douchebag.description} - ID: ${douchebag.uid}`}
+                douchebag={douchebag}
             />
       ))}
     </ul>
-    <Test client:load/>
   </main>
 </Layout>
 
