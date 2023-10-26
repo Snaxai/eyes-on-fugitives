@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 interface Props {
   images: any[];
@@ -22,11 +22,13 @@ const Image = ({ images }: Props) => {
   }, [currentIndex]);
 
   return (
+  <div style={{ height: "100px", width: "100px" }}>
     <img
       style={{ height: "100px" }}
       src={images?.[currentIndex]?.thumb}
       alt='Hello World og mugshots'
     />
+  </div>
   );
 };
 

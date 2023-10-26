@@ -10,7 +10,6 @@ const { id } = Astro.params;
 
 const response = await fetch(`https://api.fbi.gov/@wanted-person/${id}`)
 const douchebag = await response.json();
-console.log('douchebag: ', douchebag);
 ---
 
 <Layout title="Welcome to Astro.">
@@ -43,7 +42,9 @@ console.log('douchebag: ', douchebag);
         </linearGradient>
       </defs>
     </svg>
-    <h1>Eyes on <span class="text-gradient">Fugitives</span></h1>
+    <a href="/" style={{textDecoration: 'none', color: 'white'}}>
+      <h1>Eyes on <span class="text-gradient">Fugitives</span></h1>
+      </a>
     <div style={{display: 'flex', flexDirection: 'row', alignItems:'center'}}>
     <h2>
       {douchebag.title}
