@@ -1,11 +1,12 @@
 
 ---
-import { Swiper, SwiperSlide } from 'swiper/react';
+
 // Import Swiper styles
-import 'swiper/css';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carousel styles
+import { Carousel } from 'react-responsive-carousel';
 import Layout from '../layouts/Layout.astro';
-import Test from '../components/Test';
 import dayjs from "dayjs";
+import ImageSlider from "../components/Images";
 
 export const prerender = false;
 
@@ -58,7 +59,7 @@ console.log('douchebag: ', douchebag);
     <div style={{display: 'flex', flexDirection: 'row'}}>
 
       <div>
-        <img style={{maxHeight: '500px'}} src={douchebag.images?.[0]?.original} alt="Hello World og mugshots"/>
+        <ImageSlider client:only="react" images={douchebag.images}/>
       </div>
       <div style={{marginLeft: '16px'}}>
 
@@ -98,16 +99,11 @@ console.log('douchebag: ', douchebag);
         {` ${douchebag.description}`}
       </p>
     </div>
-      <Swiper
-        spaceBetween={50}
-        slidesPerView={3}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
-    >
-      <SwiperSlide>Slide 1</SwiperSlide>
 
-      ...
-    </Swiper>
+
+
+    {/* Add more SwiperSlide elements for additional images */}
+
   </main>
 </Layout>
 
