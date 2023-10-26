@@ -2,13 +2,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Test from '../components/Test';
-const { douchebagId } = Astro.params;
-
-console.log(douchebagId)
 
 export const prerender = false;
 
 const { id } = Astro.params;
+
+const response = await fetch(`https://api.fbi.gov/@wanted-person/${id}`)
+const data = await response.json();
+
+console.log(data)
 
 ---
 
@@ -48,7 +50,8 @@ const { id } = Astro.params;
       <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
     </p>
     THIS IS A DOUCHEBAG
-    {JSON.stringify(data2)}
+    {JSON.stringify(data)}
+    
     <Test client:load/>
   </main>
 </Layout>
