@@ -16,6 +16,7 @@
     "@types/react-dom": "^18.2.14",
     "alova": "^2.13.1",
     "astro": "^3.3.2",
+    "astro-link": "^1.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }

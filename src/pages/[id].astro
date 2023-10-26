@@ -1,5 +1,6 @@
 
 ---
+import { Link } from 'astro-link';
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Test from '../components/Test';
@@ -44,17 +45,7 @@ console.log('data2 ', data2)
       To get started, open the directory <code>src/pages</code> in your project.<br/>
       <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
     </p>
-    <ul role="list" class="link-card-grid">
-      {data2?.items.map((douchebag) => (
-
-            <Card
-                href="/asdasd" }
-                title={douchebag.title}
-                body="Learn how Astro works and explore the official API docs."
-            />
-
-      ))}
-    </ul>
+    THIS IS A DOUCHEBAG
     <Test client:load/>
   </main>
 </Layout>
