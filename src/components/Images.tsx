@@ -23,7 +23,7 @@ const ImageSlider = ({ images }) => {
       <img
         style={{ maxHeight: "500px", maxWidth: "400px" }}
         src={images[currentIndex].original}
-        alt={`Image ${currentIndex + 1}`}
+        alt={`Douchebage image ${currentIndex + 1}`}
       />
     </div>
   );

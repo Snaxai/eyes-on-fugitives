@@ -26,7 +26,7 @@ const Image = ({ images }: Props) => {
     <img
       style={{ height: "100px" }}
       src={images?.[currentIndex]?.thumb}
-      alt='Hello World og mugshots'
+      alt='Douchebag image'
     />
   </div>
   );
